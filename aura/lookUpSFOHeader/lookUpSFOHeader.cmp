@@ -1,0 +1,193 @@
+<!-- aura/lookUpSFOHeader.cmp -->
+<!-- 	created by: Marcio Souza
+		based on script posted on "http://sfdcmonkey.com/2017/07/17/re-usable-custom-lookup/" 
+		baded on lookup component described in https://www.lightningdesignsystem.com/components/lookups-->
+
+
+<aura:component controller="lookUpSFOHeaderController"
+                implements="force:appHostable,
+                            flexipage:availableForAllPageTypes,
+                            flexipage:availableForRecordHome,
+                            force:hasRecordId,
+                            force:lightningQuickAction" 
+				        access="global">
+
+	<aura:attribute name="oListRecords"
+					         type="List" 
+                   description="list of objects"/>
+
+	<aura:attribute name="selectedObject"
+					         type="sObject" />
+
+	<aura:attribute name="keyWord"
+					         type="String" />
+
+  <aura:attribute name="ariaLookStatus"
+                  type="String" 
+                  default="true"/>
+
+  <aura:attribute name="message"
+                  type="String" />
+
+  <aura:handler name="oSelectedEvent"
+                 event="c:lookUpSFOEvent"
+                 action="{!c.handleSelectObject}" />
+  
+  <aura:handler event="aura:waiting" 
+                 action="{!c.toggleSpinner}" />
+
+  <aura:handler event="aura:doneWaiting" 
+                 action="{!c.toggleSpinner}" />
+
+
+
+          <div class="slds-grid 
+                      slds-grid_vertical
+                      slds-m-left_small
+                      slds-m-right_small">
+              <div class="slds-col slds-size_2-of-6">
+                <!-- Main Look up -->
+                <div style="height: 10rem;">
+                    <!-- form class -->
+                    <div class="slds-form-element">
+
+                        <div class="slds-form-element__control">
+                            <div  aura:id="lookupFocused"
+                                  class="slds-combobox_container 
+                                        slds-has-inline-listbox">
+                                
+                                 <!-- This div define if the element is opened or closed -->
+                                  <div  aura:id="lookupStatus"
+                                        class="slds-combobox 
+                                              slds-dropdown-trigger 
+                                              slds-dropdown-trigger_click 
+                                              slds-combobox-lookup" 
+                                              aria-expanded="false" 
+                                              aria-haspopup="listbox" 
+                                              role="combobox">
+                                  <!-- /This div define if the element is opened or closed -->
+
+                                  <!-- Element with selected object -->
+                                  <div aura:id="lookupSelectedObject"
+                                       class="slds-hide
+                                              slds-pill-container">
+                                      <span class="slds-pill" style="width:100%">
+                                          <span class="slds-icon_container 
+                                                       slds-combobox__input-entity-icon">
+                                                       <lightning:icon iconName="standard:shipment" 
+                                                                       class="slds-icon 
+                                                                              slds-icon_small
+                                                                              slds-icon-text-default"  
+                                                                       size="x-small"                
+                                                                       alternativeText="Selected icon"/>
+                                                       <span class="slds-assistive-text"></span>
+                                          </span>
+
+                                          <span class="sld-pill__label
+                                                       slds-p-left_x-large">
+                                                {!v.selectedObject.Label}
+                                          </span>
+
+                                          <button class="slds-button 
+                                                         slds-button_icon 
+                                                         slds-input__icon 
+                                                         slds-input__icon_right"
+                                                  onclick="{!c.closePill}">
+                                            
+                                              <lightning:icon iconName="utility:close"
+                                                              size="x-small" 
+                                                              class="slds-button--icon" />
+
+                                          </button>
+
+                                    </span>
+
+                                  </div>
+                                  <!-- / Element with selected object -->
+
+                                  <!-- Input Element -->
+                                  <div aura:id="lookupInput"
+                                       class="slds-show">
+                                        <div class="slds-combobox__form-element 
+                                                    slds-input-has-icon 
+                                                    slds-input-has-icon_right" 
+                                             role="none">
+
+                                             <!-- Input field -->
+
+                                            <ui:inputText click="{!c.onFocus}" 
+                                                          updateOn="keyup" 
+                                                          keyup="{!c.keyPressController}" 
+                                                          class="slds-lookup__search-input 
+                                                                 slds-input leftPaddingClass" 
+                                                          value="{!v.keyWord}" 
+                                                          placeholder="Search Objects..."/>
+
+                                            <!-- / Input field -->
+
+                                            <!-- Input Icon -->
+                                            <span class="slds-icon_container 
+                                                         slds-icon-utility-search 
+                                                         slds-input__icon 
+                                                         slds-input__icon_right">
+                                            
+                                                    <lightning:icon iconName="utility:search" 
+                                                                    class="slds-icon 
+                                                                           slds-icon_x-small 
+                                                                           slds-icon-text-default"  
+                                                                    size="x-small"                
+                                                                    alternativeText="Search Object"/>
+                                                    
+                                                    <span class="slds-assistive-text">
+                                                                Search Object
+                                                    </span>
+
+                                            </span>
+                                            <!-- Input Icon -->
+                                        </div>
+                                  </div>
+                                   <!-- / Input Element -->
+
+                                    <!-- Items Elements -->
+                                    <div  aura:id="lookupListBox"
+                                          role="listbox">
+                                      <ul class="slds-listbox 
+                                                 slds-listbox_vertical 
+                                                 slds-dropdown 
+                                                 slds-dropdown_fluid
+                                                 slds-hide" 
+                                          role="presentation">
+
+                                              <!-- Spinner icon to be shown while the object list is loading -->
+                                                <center> 
+                                                  <lightning:spinner aura:id="lookUpSpinner"
+                                                                     size="medium"
+                                                                     alternativeText="Searching Objects"
+                                                                     class="slds-hide" />
+                                                </center>
+                                              <!-- /Spinner icon to be shown while the object list is loading -->
+
+                                              <!-- show a message if the class didn't return any value" -->
+                                                <center> {!v.message} </center>
+                                              <!-- show a message if the class didn't return any value" -->                                         
+
+                                              <!-- Item List -->
+                                                <aura:iteration items="{!v.oListRecords}" var="item">
+                                                  <c:lookUpSFOitem oRecord="{!item}" />
+                                                </aura:iteration>
+                                              <!-- / Item List -->  
+
+                                      </ul>
+                                    </div>
+                                    <!-- /Items Elements -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / Main Look up -->
+            </div>
+          </div>
+	
+</aura:component>

@@ -1,0 +1,25 @@
+<aura:component >
+	
+	<!-- Page Header -->
+	<c:PageHeader mainTitle="EXPERIENCE"
+				  subTitle="My Experience Summary"
+				  headerIcon="custom:custom95"/>
+	<!-- /Page Header -->
+	
+	<!-- Scrollable Contents -->
+	<div class="slds-scrollable" style="height: 300px;">
+  		<!-- Commpany Section -->
+  		<c:SFResumeExperienceCompany />
+  		<!-- /Company Section -->
+
+  		<!-- Commpany Section -->
+  		<c:SFResumeExperienceCompany />
+  		<!-- /Company Section -->
+	</div>
+	<!-- /Scrollable Contents -->
+
+	<!-- Section Bottom -->
+	<c:SectionBottom />
+	<!-- /Section Bottom -->
+
+</aura:component>

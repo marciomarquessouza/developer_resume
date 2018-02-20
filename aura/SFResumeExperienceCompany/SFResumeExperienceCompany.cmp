@@ -1,0 +1,29 @@
+<aura:component >
+	
+	<div class="slds-card-wrapper
+				slds-m-vertical_small
+				slds-m-horizontal_x-small"
+		  style="background-color:#f9f9fa;">
+
+		<article>		
+
+			<div class="slds-grid">
+				<!-- left columns -->
+				<div class="slds-col slds-size_7-of-12
+							 slds-m-right_small">
+					<c:Feed />
+				</div>
+				<!-- /left columns -->
+					
+				<!-- right columns -->
+				<div class="slds-col slds-size_5-of-12">
+					<c:CardNarrow />
+				</div>
+				<!-- /right columns -->	
+			</div>
+
+		</article>
+	
+	</div>
+
+</aura:component>

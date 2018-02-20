@@ -1,0 +1,61 @@
+<!-- aura/lookUpSFOitem.cmp -->
+<!-- 	created by: Marcio Souza
+		based on script posted on "http://sfdcmonkey.com/2017/07/17/re-usable-custom-lookup/" -->
+
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+				access="global" >
+
+	<!-- attribute received in the component looping too fill all child elements -->
+	<aura:attribute name="oRecord"
+					type="sObject" />
+
+	<!-- Element to link this child element with the parent element -->
+	<aura:registerEvent name="oSelectedEvent"
+						type="c:lookUpSFOEvent" />
+
+	<!-- List Item -->
+	<!-- list with object element. Each loop from the parent element will create a new child element in the list -->
+	<!-- onClick call the Controller and the parent event is fired -->
+	
+	<!-- Item List -->
+    <li role="presentation" 
+    	class="slds-listbox__item"
+        onclick="{!c.objectSelected}">
+                                                
+    	<div  id="listbox-option-unique-id-01" 
+        	  class="slds-media 
+              		 slds-listbox__option 
+                     slds-listbox__option_entity 
+                     slds-listbox__option_has-meta" 
+              role="option">
+                                                  
+        	<!-- icon structure -->
+            <span class="slds-media__figure">
+            <span class="slds-icon_container 
+            			 slds-icon-standard-account"> 
+                                                                                                   
+                   	<lightning:icon iconName="standard:shipment" 
+                    				class="slds-icon 
+                                    	   slds-icon_small"  
+                                    size="small"                
+                                    alternativeText="Search Object"/>
+            </span>
+            </span>
+            <!-- / icon structure -->
+
+            <!-- list text -->
+            <span class="slds-media__body">
+            <span class="slds-listbox__option-text 
+            			 slds-listbox__option-text_entity">{!v.oRecord.Label}</span>
+            <span class="slds-listbox__option-meta 
+            				 slds-listbox__option-meta_entity
+            				 slds-text-body_small
+            				 slds-text-color_weak"><b>Api Name: </b>{!v.oRecord.QualifiedApiName}</span>
+            </span>
+            <!-- / list text -->
+
+        </div>
+    </li>
+    <!-- / Item List -->
+	
+</aura:component>

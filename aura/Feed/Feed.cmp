@@ -1,0 +1,48 @@
+<aura:component >
+	
+	<div class="slds-card-wrapper
+				slds-card_boundary">
+	<div class="slds-feed">
+		<ul class="slds-feed__list">
+			<li class="slds-feed__item">
+				<article class="slds-post">
+					<header class="slds-post__header 
+								   slds-media">
+						<div class="slds-media__figure">
+							<a href="javascript:void(0);" class="slds-avatar slds-avatar_circle slds-avatar_large">
+								<img src="{!$Resource.SFResume +'/Assets/upl_logo.jpg'}" />
+							</a>
+						</div>
+
+						<div class="slds-media__body">
+						<div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+						<p><a href="javascript:void(0);" title="Jason Rodgers">Jason Rogers</a> — <a href="javascript:void(0);" title="Design Systems">Design Systems</a></p>
+						
+						</div>
+						<p class="slds-text-body_small">
+							<a href="javascript:void(0);" 
+							   title="Click for single-item view of this post" 
+							   class="slds-text-link_reset">5 days Ago</a></p>
+						</div>
+					</header>
+
+					<div class="slds-post__content slds-text-longform">
+						<p>Hey there! Here's the latest demo presentation <a href="javascript:void(0);" title="Jenna Davis">@Jenna Davis</a>, let me know if there are any changes. I've updated slides 3-8 and slides 16-18 slides with new product shots.</p>
+					</div>
+
+					<dl class="slds-dl_inline">
+						<dt class="slds-dl_inline__label"><b><lightning:icon iconName="utility:right" size="xx-small" /> Activitie 1: </b></dt>
+						<dd class="slds-dl_inline__detail">Activitie Description </dd>
+						<dt class="slds-dl_inline__label"><b><lightning:icon iconName="utility:right" size="xx-small" /> Activitie 2: </b></dt>
+						<dd class="slds-dl_inline__detail">Activitie Description </dd>
+						<dt class="slds-dl_inline__label"><b><lightning:icon iconName="utility:right" size="xx-small" /> Activitie 3: </b></dt>
+						<dd class="slds-dl_inline__detail">Activitie Description </dd>
+					</dl>
+			
+				</article>
+			</li>
+		</ul>
+	</div>
+	
+	</div>
+</aura:component>

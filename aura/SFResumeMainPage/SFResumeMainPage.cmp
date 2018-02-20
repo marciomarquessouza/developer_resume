@@ -1,0 +1,119 @@
+<aura:component controller="SFResumeMainPageController"
+				implements="force:appHostable,
+							flexipage:availableForAllPageTypes,
+							flexipage:availableForRecordHome,
+							force:hasRecordId,
+							force:lightningQuickAction"
+				access="global">
+
+	<aura:attribute name="pageLanguage" 
+					type="String" 
+					default="EN" />
+
+	<aura:handler 	name="languageEvent" 
+					event="c:SFResumeMainPageEvent"  
+					action="{!c.handlerLanguageEvent}" />
+
+    <aura:handler name="init" 
+    			  value="{!this}" 
+    			  action="{!c.doInit}"/>
+
+    <aura:attribute name="langSFResumeHeader"
+    				type="List"/>
+
+	<div class="slds-grid">
+		<div class="slds-col slds-size_1-of-6 resume-bkg">
+			<!-- Background Left Space -->
+			<div id="page-position">
+    		</div>
+		</div>
+
+		<div class="slds-col slds-size_4-of-6">
+			
+			<div id="container_SFResumeHeader"
+				 class="slds-col "
+				 style="background-color: white;
+				 		  overflow: hidden;
+						  position: fixed;
+						  z-index: 999;
+						  top: 0;
+						  width: 66.7%">
+					<!-- Header -->
+						<c:SFResumeHeader langSFResumeHeader="{!v.langSFResumeHeader}" />
+					<!-- /Header -->
+			</div>
+
+			
+			<div id="container_body"
+				 class="slds-grid 
+						slds-grid_vertical" >
+
+
+
+				<div id="container_blank_header"
+					 class="slds-col"
+					  style="height: 180px;">
+
+				</div>
+
+				<div id="container_SFResumeBanner"
+					 class="slds-col"
+					  style="height: 320px;">
+					<!-- Banner -->
+					<c:SFResumeBanner />
+					<!-- /Banner -->
+				</div>
+
+				<div id="container_SFResumeAboutMe"
+					 class="slds-col">
+					<!-- About Me -->
+					<c:SFResumeAboutMe />
+					<!-- /About Me -->
+				</div>
+
+				<div id="container_SFResumeSkillset"
+					 SFResumeAboutMeclass="slds-col">
+					<!-- Skillset -->
+					<c:SFResumeSkillset />
+					<!-- /Skillset -->
+				</div>
+
+				<div id="container_SFResumeExperience"
+					 class="slds-col">
+					<!-- Experience -->
+					<c:SFResumeExperience />
+					<!-- /Experience -->
+				</div>
+
+				<div id="container_SFResumeEducation"
+					 class="slds-col">
+					<!-- Education -->
+					<c:SFResumeEducation />
+					<!-- /Education -->
+				</div>
+
+				<div id="container_SFResumeProjectSample"
+					 class="slds-col">
+					<!-- Project Sample -->
+					<c:SFResumeProjectSample />
+					<!-- /Project Sample -->
+				</div>
+
+				<div id="container_SFResumeContactMe"
+					 class="slds-col">
+					<!-- Contact Me -->
+					<c:SFResumeContactMe />
+					<!-- /Contact Me -->
+				</div>
+
+			</div>
+
+		</div>
+			
+		<div class="slds-col slds-size_1-of-6 resume-bkg">
+			<!-- Background Right Space -->
+		</div>
+
+	</div>
+
+</aura:component>

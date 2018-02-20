@@ -1,0 +1,36 @@
+<aura:component >
+	
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<aura:attribute name="langSFResumeHeader" type="List" />
+
+	<aura:handler name="change" value="{!v.langSFResumeHeader}" action="{!c.languageDataChange}" /> 
+	
+			<div class="slds-grid slds-grid_vertical">
+				
+				<div class="slds-col" style="height: 60px;">
+					<!-- Global Header -->
+					<c:GlobalHeader aura:id="globalHeaderContainer"/>
+					<!-- /Global Header -->
+				</div>
+
+				<div class="slds-col" style="height: 40px;">
+					<!-- Global Navigation -->
+					<c:GlobalNavigation aura:id="globalNavigationContainer"/>
+					<!-- /Global Navigation -->
+				</div>
+
+				<div class="slds-col 
+							slds-m-top_small
+							slds-m-left_small
+							slds-m-right_small"
+					  style="height: 50px;">
+					<!-- Process Path -->
+						<c:Path aura:id="pathContainer"/>
+					<!-- /Process Path -->
+				</div>
+			
+			</div>
+
+
+</aura:component>

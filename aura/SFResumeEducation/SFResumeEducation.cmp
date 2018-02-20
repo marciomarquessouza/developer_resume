@@ -1,0 +1,17 @@
+<aura:component >
+	<!-- Page Header -->
+	<c:PageHeader mainTitle="EDUCATION AND AWARDS"
+				  subTitle="Degree and Honors"
+				  headerIcon="custom:custom83"/>
+	<!-- /Page Header -->
+
+	<!-- Scrollable Contents -->
+	<div class="slds-scrollable" style="height: 300px;">
+
+	</div>
+	<!-- /Scrollable Contents -->
+
+	<!-- Section Bottom -->
+	<c:SectionBottom />
+	<!-- /Section Bottom -->
+</aura:component>

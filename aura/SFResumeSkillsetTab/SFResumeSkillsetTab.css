@@ -1,0 +1,27 @@
+.THIS .sf-body {
+  box-sizing: border-box;
+}
+
+.THIS .sf-button {
+  color: #ffb75d;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 26px;
+  height: 28px;
+}
+
+.THIS .base {
+  background-color: #005fb2;
+  color: #ffffff;
+  margin-bottom: 10px;
+  padding-left: 8px;
+  width: 150px;
+}
+
+.THIS .change {
+    width: 100%;
+}
+
+.THIS .ease {
+  transition: width 3s ease;
+}

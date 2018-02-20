@@ -1,0 +1,88 @@
+<aura:component >
+	<!-- Page Header -->
+	<c:PageHeader mainTitle="SKILLS"
+				  subTitle="My Main Skills"
+				  headerIcon="custom:custom9"/>
+	<!-- /Page Header -->
+
+	<!-- Verical Tabs -->
+	<div class="slds-vertical-tabs">
+	
+		<ul class="slds-vertical-tabs__nav" 
+			role="tablist" 
+			aria-orientation="vertical">
+			<li class="slds-vertical-tabs__nav-item 
+						slds-is-active" 
+				role="presentation">
+				<a class="slds-vertical-tabs__link" 
+				    href="javascript:void(0)" 
+				    role="tab" tabindex="0" 
+				    aria-selected="true" 
+				    aria-controls="slds-vertical-tabs-0" 
+				    id="slds-vertical-tabs-0__nav">Skills</a>
+			</li>
+			
+			<li class="slds-vertical-tabs__nav-item" 
+				role="presentation">
+				<a class="slds-vertical-tabs__link" 
+					href="javascript:void(0)" 
+					role="tab" tabindex="-1" 
+					aria-selected="false" 
+					aria-controls="slds-vertical-tabs-1" 
+					id="slds-vertical-tabs-1__nav">Salesforce</a>
+			</li>
+			
+			<li class="slds-vertical-tabs__nav-item" 
+				role="presentation">
+				<a class="slds-vertical-tabs__link" 
+					href="javascript:void(0)" 
+					role="tab" tabindex="-1" 
+					aria-selected="false" 
+					aria-controls="slds-vertical-tabs-2" 
+					id="slds-vertical-tabs-2__nav">Backend</a>
+			</li>
+
+			<li class="slds-vertical-tabs__nav-item" 
+				role="presentation">
+				<a class="slds-vertical-tabs__link" 
+					href="javascript:void(0)" 
+					role="tab" tabindex="-1" 
+					aria-selected="false" 
+					aria-controls="slds-vertical-tabs-3" 
+					id="slds-vertical-tabs-3__nav">Frontend</a>
+			</li>
+
+			<li class="slds-vertical-tabs__nav-item" 
+				role="presentation">
+				<a class="slds-vertical-tabs__link" 
+					href="javascript:void(0)" 
+					role="tab" tabindex="-1" 
+					aria-selected="false" 
+					aria-controls="slds-vertical-tabs-4" 
+					id="slds-vertical-tabs-4__nav">UX</a>
+			</li>
+
+
+			<li class="slds-vertical-tabs__nav-item" 
+				role="presentation">
+				<a class="slds-vertical-tabs__link" 
+					href="javascript:void(0)" 
+					role="tab" tabindex="-1" 
+					aria-selected="false" 
+					aria-controls="slds-vertical-tabs-5" 
+					id="slds-vertical-tabs-5__nav">Project and Process</a>
+			</li>
+		</ul>
+
+		<!-- Tab Contents -->
+		<c:SFResumeSkillsetTab />
+		<!-- /Tab Contents -->
+		
+	</div>
+	<!-- /Vertical Tabs -->
+
+	<!-- Section Bottom -->
+	<c:SectionBottom />
+	<!-- /Section Bottom -->
+
+</aura:component>

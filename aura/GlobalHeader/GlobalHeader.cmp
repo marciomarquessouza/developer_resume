@@ -1,0 +1,136 @@
+<aura:component >
+	 	
+	
+	<aura:attribute name="searchPlaceHolder"
+					type="String"
+					default="Search..." />
+
+	<aura:attribute name="languageInitial"
+					type="String"
+					default="EN" />
+
+	<aura:attribute name="languageOption"
+					type="String"
+					default="Português" />
+
+	<aura:registerEvent name="languageEvent" type="c:SFResumeMainPageEvent" /> 	
+
+
+	<aura:method name="myMethod" action="{!c.executeMyMethod}"> 
+        <aura:attribute name="param1" type="String"/> 
+    </aura:method>
+
+		<div class="slds-global-header 
+					slds-grid 
+					slds-grid_align-spread">
+		
+		<!-- Logo Header -->
+		<div class="slds-global-header__item">
+			<img src="{!$Resource.SFResume +'/Assets/Logo_150x111_color.png'}" height="100" width="61" />
+		</div>
+		<!-- /Logo Header -->
+		
+		<!-- Search Header -->
+		<div class="slds-global-header__item 
+					slds-global-header__item_search">
+			
+			<!-- Lookup Combobox -->
+			<div aria-expanded="false" 
+				 aria-haspopup="listbox" 
+				 class="slds-form-element 
+				 		slds-lookup" 
+				 role="combobox">
+			
+			<!-- Search icon -->
+			<div class="slds-form-element__control 
+						slds-input-has-icon 
+						slds-input-has-icon_left-right">
+
+				<span class="slds-input__icon slds-input__icon_left">
+					<lightning:icon iconName="utility:search" 
+									size="x-small" 
+									variant="search"/>
+				</span>
+
+				<!-- input -->
+				<input  type="text" 
+						aria-autocomplete="list" 
+						aria-controls="global-search-list-01" 
+						autocomplete="off" 
+						class= "slds-input 
+								slds-lookup__search-input" 
+						id="global-search-01" 
+						placeholder="{!v.searchPlaceHolder}" 
+						role="textbox" />
+			</div>
+
+				<div class="slds-lookup__menu" 
+					 role="listbox" 
+					 id="global-search-list-01">
+					
+					<ul  class="slds-lookup__list" 
+						 role="group" 
+						 aria-label="Recent Items">
+
+					</ul>
+				
+				</div>
+			</div>
+		</div>
+		<!-- /Search Header --> 
+
+		<ul class="slds-global-header__item 
+				   slds-grid slds-grid_vertical-align-center">
+		
+		
+			<li class="slds-dropdown-trigger 
+					   slds-dropdown-trigger_click 
+					   slds-m-left_x-small">
+			
+				<div   aura:id="languageButton"
+					   class="slds-dropdown-trigger 
+							slds-dropdown-trigger_click">
+
+					<button class="slds-button slds-button_icon 
+								   slds-button_icon-border-filled" 
+							aria-haspopup="true" 
+							title="Show More"
+							onclick="{!c.openLanguages}">
+						
+						<span class="slds-avatar 
+									 slds-avatar_circle">
+							
+							<abbr class="slds-avatar__initials 
+										 slds-icon-standard-user" 
+								  title="person name">
+								  {!v.languageInitial}
+							</abbr>
+						
+						</span>
+					</button>
+
+					<div class="slds-dropdown 
+								slds-dropdown_right">
+						<ul class="slds-dropdown__list" 
+							role="menu">
+							<li class="slds-dropdown__item" 
+								role="presentation">
+								<a href="javascript:void(0);" 
+								   role="menuitem" 
+								   tabindex="0">
+									<span 	onclick="{!c.changeLanguage}"
+											class="slds-truncate" 
+											title="Menu Item One">Change to: {!v.languageOption}</span>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			
+			</li>
+		</ul>
+		</div>
+
+
+</aura:component>

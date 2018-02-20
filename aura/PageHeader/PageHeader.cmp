@@ -1,0 +1,46 @@
+<aura:component >
+
+	<aura:attribute name="mainTitle" 
+					type="String"
+					default="Main Title"/> 
+
+	<aura:attribute name="subTitle" 
+					type="String"
+					default="Sub Title"/>
+
+	<aura:attribute name="headerIcon" 
+					type="String"
+					default="custom:custom101"/>
+
+	<div class="slds-page-header">
+		
+		<div class="slds-media">
+			<!-- Icon -->	
+			<div class="slds-media__figure">
+				<span class="slds-icon_container slds-icon-standard-opportunity">
+					<span class="slds-icon slds-page-header__icon">
+						<lightning:icon iconName="{!v.headerIcon}" />
+					</span>
+				</span>
+			</div>
+			<!-- /Icon -->
+
+			<!-- Titles -->
+			<div class="slds-media__body">
+				<!-- Main Title -->
+				<h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!v.mainTitle}">
+					{!v.mainTitle}
+				</h1>
+				<!-- /Main Title -->
+
+				<!-- Sub Title -->
+				<p class="slds-text-body_small slds-line-height_reset">
+					{!v.subTitle}
+				</p>
+				<!-- Sub Title -->
+			
+			</div>
+			<!-- /Titles -->
+		</div>
+	</div>
+</aura:component>

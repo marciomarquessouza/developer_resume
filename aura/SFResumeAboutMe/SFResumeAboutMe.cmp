@@ -1,0 +1,113 @@
+<aura:component >
+	
+	<!-- Page Header -->
+	<c:PageHeader mainTitle="ABOUT ME"
+				  subTitle="My Basic Informations"
+				  headerIcon="custom:custom101"/>
+	<!-- /Page Header -->
+
+	<!-- Section Panel -->
+	<div class="slds-brand-band slds-brand-band_medium">
+		<div class="slds-grid">
+			
+			<!-- First Column - blank -->
+			<div class="slds-col
+						slds-size_1-of-12">
+
+			</div>
+			<!-- /First Column - blank -->
+
+			<!-- Left Column -->
+			<div class="slds-col
+						slds-size_5-of-12">
+				
+				<!-- Title -->
+				<div class="slds-text-align_center
+							slds-m-vertical_large">
+					SENIOR • DEVELOPER AND ANALYST 
+					<p><span class="slds-badge"> Experience in Salesforce, Java, Python, React And More</span></p>
+				</div>
+				<!-- /Title -->
+
+				<!-- Body Text -->
+				<div class="slds-text-align_left
+							slds-m-vertical_large">
+					The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+					The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+					The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+					The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+				</div>
+				<!-- Body Text -->
+
+			</div>
+			<!-- /Left Column -->
+
+			<!-- Middle Column - Blnak -->
+			<div class="slds-col
+						slds-size_1-of-12">
+
+			</div>
+			<!-- Middle Column - Blank-->
+
+			<!-- Right Column -->
+			<article class="slds-card 
+		  				  slds-card--narrow
+		  				  slds-m-vertical_medium">
+
+		    <div class="slds-card__header 
+		    			slds-grid">
+		      <header class="slds-media slds-media--center slds-has-flexi-truncate">
+		        <div class="slds-media__figure">
+		          <span class="slds-icon slds-icon-standard-contract slds-icon--small">
+		            <lightning:icon iconName="standard:contract" size="small"/>
+		          </span>
+		        </div>
+		        <div class="slds-media__body slds-truncate">
+		          <h2 class="slds-text-heading--small">Summary</h2>
+		        </div>
+		      </header>
+		    </div>
+
+		    <div class="slds-card__body">
+		      <div class="slds-card__body--inner">
+		        <div class="slds-tile">
+		          
+		          <div class="slds-tile__detail
+		      					slds-m-vertical_large">
+			        	<dl class="slds-dl_inline">
+						  <dt class="slds-dl_inline__label"><b>Name:</b></dt>
+						  <dd class="slds-dl_inline__detail">Marcio Marques de Souza</dd>
+						  <dt class="slds-dl_inline__label"><b>Age:</b></dt>
+						  <dd class="slds-dl_inline__detail">33 years</dd>
+						  <dt class="slds-dl_inline__label"><b>Email:</b></dt>
+						  <dd class="slds-dl_inline__detail">marciomultimedia@gmail.com</dd>
+						  <dt class="slds-dl_inline__label"><b>Phone:</b></dt>
+						  <dd class="slds-dl_inline__detail"> +123 456 789 012</dd>
+						  <dt class="slds-dl_inline__label"><b>City:</b></dt>
+						  <dd class="slds-dl_inline__detail">Campinas-SP/Brazil</dd>
+						  <dt class="slds-dl_inline__label"><b>Nationality:</b></dt>
+						  <dd class="slds-dl_inline__detail">Brazilian</dd>
+						</dl>
+		      		</div>
+		        </div>
+		      </div>
+		    </div>
+		  </article>
+			<!-- /Right Column -->
+
+			<!-- Last Column - Blank -->
+			<div class="slds-col
+						slds-size_1-of-12">
+
+			</div>
+			<!-- /Last Column - Blank -->
+
+		</div>
+	</div>
+	<!-- / Section Panel -->
+
+	<!-- Section Bottom -->
+	<c:SectionBottom />
+	<!-- /Section Bottom -->
+
+</aura:component>

@@ -1,0 +1,57 @@
+<aura:component >
+
+	<aura:attribute name="sfBars"
+					type="List"
+					default="[{id:'sfBar01',name:'Salesforce',total:'93%'},
+					  {id:'sfBar02',name:'Back-end',total:'90%'},
+					  {id:'sfBar03',name:'Fron-end',total:'87%'},
+					  {id:'sfBar04',name:'UX',total:'72%'},
+					  {id:'sfBar05',name:'Project and Process',total:'65%'}]" />
+
+	<aura:attribute name="sfBarsTitle"
+					type="String"
+					default="Skills" />
+
+	<aura:attribute name="sfBarsSubTitle"
+					type="String"
+					default="Click in each skill to open the details" />
+
+	<div class="slds-vertical-tabs__content 
+				slds-show" 
+		  id="slds-vertical-tabs-0" 
+		  role="tabpanel" 
+		  aria-labelledby="slds-vertical-tabs-0__nav">
+
+		<div class="slds-text-longform">
+			<h3 class="slds-text-heading_medium">
+				{!v.sfBarsTitle} 
+				<p class="slds-text-body_small"> {!v.sfBarsSubTitle}</p>
+			</h3>
+			
+			<!-- Skill Bars -->
+			<div class="sf-body">
+
+				<aura:iteration items="{!v.sfBars}" var="item">                                                  
+					<div aura:id="sfBarEase"
+						 id="{!item.id}"
+						 class="ease base">
+						 <span class="slds-text-body_small">
+							{!item.name} [{!item.total}]
+						</span>
+					</div>
+                </aura:iteration>
+
+			</div>
+
+			<input  class="sf-button" 
+					type="button" 
+					value="Start" 
+					id="start" 
+					onclick="{!c.changeBars}"/>
+			<!-- /Skill Bars --> 
+
+		</div>
+	</div>
+	
+
+</aura:component>

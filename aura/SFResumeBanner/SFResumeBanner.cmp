@@ -1,0 +1,143 @@
+<aura:component >
+	<div class="slds-grid
+				slds-grid_vertical">
+		
+		<!-- Title -->
+		<div class="slds-col
+					slds-m-left_xx-large
+					slds-m-top_xx-large">
+			
+			<div class="slds-text-title 
+						slds-text-color_weak">
+				<lightning:icon iconName="utility:description" size="x-small" /> My Resume
+			</div>
+
+			<div class="slds-text-heading_large">
+				MARCIO M. SOUZA
+			</div>
+
+			<span class="slds-badge">
+				Senior - Developer and Analyst
+			</span>
+
+		</div>
+		<!-- /Title -->
+
+		<!-- Icons Section -->
+		<div class="slds-col">
+			<div class="slds-grid
+						slds-grid_align-center">
+				
+				<!-- PDF Format Icon -->
+				<div class="slds-col 
+							slds-size_4-of-12
+							slds-m-left_xx-large
+							slds-m-top_xx-large">
+
+						<div class="slds-text-align_center">
+							<img class="slds-m-around_small"
+								 src="{!$Resource.SFResume +'/Assets/PDFIcon.svg'}" 
+								 height="40" 
+								 width="40"/>
+							<p><span class="slds-badge_inverse"> 
+									<span class="slds-m-horizontal_medium">Download PDF Version</span>
+								</span>
+							</p>
+						</div>
+				</div>
+				<!-- /PDF Format Icon -->
+
+				<div class="slds-col
+							slds-size_1-of-12">
+				</div>
+
+				<!-- Contact Icons -->
+				<div class="slds-col 
+							slds-size_5-of-12
+							slds-m-right_xx-large
+							slds-m-top_xx-large">
+			
+					<div class="slds-grid
+								slds-align_absolute-center">
+							<!-- github icon -->
+							<div class="slds-col slds-size_1-of-6">
+								<div class="slds-text-align_center">
+									<img class="slds-m-around_small"
+										 src="{!$Resource.SFResume +'/Assets/git_icon.svg'}" 
+										 height="30" 
+										 width="30"/>
+								</div>
+							</div>
+							<!-- / github icon -->
+
+							<!-- linkedin icon -->
+							<div class="slds-col slds-size_1-of-6">
+								<div class="slds-text-align_center">
+									<img class="slds-m-around_small"
+										 src="{!$Resource.SFResume +'/Assets/linkedin_icon.svg'}" 
+										  height="30" 
+										 width="30"/>
+								</div>
+							</div>
+							<!-- / linkedin icon -->
+
+							<!-- youtube icon -->
+							<div class="slds-col slds-size_1-of-6">
+								<div class="slds-text-align_center">
+									<img class="slds-m-around_small"
+										 src="{!$Resource.SFResume +'/Assets/youtube_icon.svg'}" 
+										  height="30" 
+										 width="30"/>
+								</div>
+							</div>
+							<!-- / youtube	 icon -->
+
+							<!-- whatsapp icon -->
+							<div class="slds-col slds-size_1-of-6">
+								<div class="slds-text-align_center">
+									<img class="slds-m-around_small"
+										 src="{!$Resource.SFResume +'/Assets/whatsapp.svg'}" 
+										  height="30" 
+										 width="30"/>
+								</div>
+							</div>
+							<!-- / whatsapp	 icon -->
+
+							<!-- skype icon -->
+							<div class="slds-col slds-size_1-of-6">
+								<div class="slds-text-align_center">
+									<img class="slds-m-around_small"
+										 src="{!$Resource.SFResume +'/Assets/skype.svg'}" 
+										  height="30" 
+										 width="30"/>
+								</div>
+							</div>
+							<!-- / skype icon -->
+
+							<!-- salesforce icon -->
+							<div class="slds-col slds-size_1-of-6">
+								<div class="slds-text-align_center">
+									<img class="slds-m-around_small"
+										 src="{!$Resource.SFResume +'/Assets/salesforce_icon.svg'}" 
+										  height="30" 
+										 width="630"/>
+								</div>
+							</div>
+							<!-- / salesforce icon -->
+							<div class="slds-col
+										slds-size_1-of-12">
+							</div>
+
+					</div>
+				</div>
+				<!-- Contact Icons -->
+			</div>
+		</div>
+		<!-- /Icons Section -->
+
+		<!-- Section Bottom -->
+		<c:SectionBottom />
+		<!-- /Section Bottom -->
+
+	</div>
+</aura:component>
